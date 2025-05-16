@@ -32,17 +32,16 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@ethersproject/abi": "5.7.0",
-    "@ethersproject/address": "5.7.0",
-    "@ethersproject/bignumber": "5.7.0",
-    "@ethersproject/bytes": "5.7.0",
-    "@ethersproject/constants": "5.7.0",
-    "@ethersproject/contracts": "5.7.0",
-    "@ethersproject/experimental": "5.7.0",
-    "@ethersproject/providers": "5.7.0",
-    "@ethersproject/sha2": "5.7.0",
-    "@ethersproject/strings": "5.7.0",
-    "@ethersproject/units": "5.7.0",
+    "@ethersproject/abi": "^5.0.0",
+    "@ethersproject/address": "^5.0.0",
+    "@ethersproject/bignumber": "^5.0.0",
+    "@ethersproject/bytes": "^5.0.0",
+    "@ethersproject/constants": "^5.0.0",
+    "@ethersproject/contracts": "^5.0.0",
+    "@ethersproject/experimental": "^5.0.0",
+    "@ethersproject/providers": "^5.0.0",
+    "@ethersproject/strings": "^5.0.0",
+    "@ethersproject/units": "^5.0.0",
     "@gelatonetwork/limit-orders-lib": "^4.1.0",
     "@gnosis.pm/safe-apps-wagmi": "^1.2.0",
     "@next/bundle-analyzer": "13.0.7",
@@ -59,8 +58,8 @@
     "@pancakeswap/utils": "*",
     "@pancakeswap/wagmi": "*",
     "@reduxjs/toolkit": "^1.9.1",
-    "@reown/appkit": "^1.7.3",
-    "@reown/appkit-adapter-ethers5": "^1.7.3",
+    "@reown/appkit": "^1.7.4",
+    "@reown/appkit-adapter-ethers5": "^1.7.4",
     "@sentry/nextjs": "^7.9.0",
     "@snapshot-labs/snapshot.js": "^0.4.40",
     "@vanilla-extract/next-plugin": "^2.1.1",
@@ -147,5 +146,8 @@
     "typechain": "^6.1.0",
     "vite-tsconfig-paths": "^4.0.3",
     "vitest": "^0.27.2"
+  },
+  "resolutions": {
+    "@ethersproject/*": "5.7.0"
   }
 }
