@@ -148,6 +148,8 @@
     "vitest": "^0.27.2"
   },
   "resolutions": {
-    "@ethersproject/*": "5.7.0"
+    "@ethersproject/*": "5.7.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
