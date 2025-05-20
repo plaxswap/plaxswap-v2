@@ -58,7 +58,6 @@
     "@pancakeswap/utils": "*",
     "@pancakeswap/wagmi": "*",
     "@reduxjs/toolkit": "^1.9.1",
-    "@reown/appkit": "^1.7.5",
     "@sentry/nextjs": "^7.9.0",
     "@snapshot-labs/snapshot.js": "^0.4.40",
     "@vanilla-extract/next-plugin": "^2.1.1",
