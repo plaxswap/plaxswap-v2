@@ -142,5 +142,8 @@
     "typechain": "^6.1.0",
     "vite-tsconfig-paths": "^4.0.3",
     "vitest": "^0.27.2"
-  }
+  },
+  "resolutions": {
+  "@reown/appkit/react": "19.0.0"
+}
 }
