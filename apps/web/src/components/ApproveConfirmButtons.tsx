@@ -20,6 +20,7 @@ interface ApproveConfirmButtonsProps {
   useMinWidth?: boolean
 }
 
+// @ts-ignore
 const StyledApproveConfirmButtonRow = styled.div`
   align-items: center;
   display: grid;

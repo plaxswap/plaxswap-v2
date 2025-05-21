@@ -4,6 +4,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import { TransactionDetails } from 'state/transactions/reducer'
 import { FarmTransactionStatus, NonBscFarmStepType } from 'state/transactions/actions'
 
+// @ts-ignore
 const ListStyle = styled.div`
   position: relative;
   margin-bottom: 4px;

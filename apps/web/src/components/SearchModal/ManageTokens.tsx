@@ -23,13 +23,14 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import ImportRow from './ImportRow'
 import { CurrencyModalView } from './types'
 
+// @ts-ignore
 const Wrapper = styled.div`
   width: 100%;
   height: calc(100% - 60px);
   position: relative;
   padding-bottom: 60px;
 `
-
+// @ts-ignore
 const Footer = styled.div`
   position: absolute;
   bottom: 0;

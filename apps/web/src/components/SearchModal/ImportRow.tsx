@@ -8,6 +8,7 @@ import styled from 'styled-components'
 import { useIsUserAddedToken, useIsTokenActive } from 'hooks/Tokens'
 import { useTranslation } from '@pancakeswap/localization'
 
+// @ts-ignore
 const TokenSection = styled.div<{ dim?: boolean }>`
   padding: 4px 20px;
   height: 56px;

@@ -1,6 +1,7 @@
 import Link, { LinkProps } from 'next/link'
 import styled from 'styled-components'
 
+// @ts-ignore
 const StyledInternalLink = styled('a')`
   text-decoration: none;
   cursor: pointer;

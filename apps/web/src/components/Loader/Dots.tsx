@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+// @ts-ignore
 const Dots = styled.span`
   &::after {
     display: inline-block;

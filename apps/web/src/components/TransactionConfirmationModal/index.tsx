@@ -21,6 +21,7 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import { getBlockExploreLink, getBlockExploreName } from '../../utils'
 import AddToWalletButton, { AddToWalletTextOptions } from '../AddToWallet/AddToWalletButton'
 
+// @ts-ignore
 const Wrapper = styled.div`
   width: 100%;
 `

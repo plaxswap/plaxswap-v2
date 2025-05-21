@@ -89,6 +89,7 @@ const AddToWalletButton: React.FC<AddToWalletButtonProps & ButtonProps> = ({
   if (!isCanRegisterToken) return null
 
   return (
+    // @ts-ignore
     <Button
       {...props}
       onClick={() => {

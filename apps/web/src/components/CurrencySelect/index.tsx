@@ -9,6 +9,7 @@ import { useAccount } from 'wagmi'
 import { CurrencyLogo } from '../Logo'
 import { RowBetween, AutoRow } from '../Layout/Row'
 
+// @ts-ignore
 const DropDownHeader = styled.div`
   width: 100%;
   height: 40px;

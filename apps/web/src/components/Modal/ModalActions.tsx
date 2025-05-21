@@ -16,6 +16,7 @@ const ModalActions: React.FC<React.PropsWithChildren> = ({ children }) => {
   )
 }
 
+// @ts-ignore
 const StyledModalActions = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors.primaryDark}00;
@@ -24,6 +25,7 @@ const StyledModalActions = styled.div`
   padding: ${(props) => props.theme.spacing[4]} 0;
 `
 
+// @ts-ignore
 const StyledModalAction = styled.div`
   flex: 1;
 `

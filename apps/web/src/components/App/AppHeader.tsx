@@ -39,7 +39,7 @@ const AppHeader: React.FC<React.PropsWithChildren<Props>> = ({
         {backTo &&
           (typeof backTo === 'string' ? (
             <Link passHref href={backTo}>
-              <IconButton as="a" scale="sm">
+              <IconButton scale="sm">
                 <ArrowBackIcon width="32px" />
               </IconButton>
             </Link>

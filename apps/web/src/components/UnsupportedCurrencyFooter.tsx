@@ -13,6 +13,7 @@ interface Props extends InjectedModalProps {
   currencies: (Currency | undefined)[]
 }
 
+// @ts-ignore
 const DetailsFooter = styled.div`
   padding: 8px 0;
   width: 100%;

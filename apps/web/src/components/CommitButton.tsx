@@ -8,6 +8,7 @@ import Trans from './Trans'
 const wrongNetworkProps: ButtonProps = {
   variant: 'danger',
   disabled: false,
+  // @ts-ignore
   children: <Trans>Wrong Network</Trans>,
 }
 
@@ -17,12 +18,14 @@ export const CommitButton = (props: ButtonProps) => {
   const setHideWrongNetwork = useSetAtom(hideWrongNetworkModalAtom)
 
   return (
+    // @ts-ignore
     <Button
       {...props}
       onClick={(e) => {
         if (isWrongNetwork) {
           setHideWrongNetwork(false)
         } else {
+          // @ts-ignore
           props.onClick?.(e)
         }
       }}
