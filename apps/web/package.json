@@ -28,7 +28,6 @@
       "last 1 safari version"
     ]
   },
-  
   "dependencies": {
     "@ethersproject/abi": "^5.0.0",
     "@ethersproject/address": "^5.0.0",
@@ -57,7 +56,7 @@
     "@pancakeswap/wagmi": "*",
     "@reduxjs/toolkit": "^1.9.1",
     "@reown/appkit": "^1.7.6",
-    "@reown/appkit-adapter-ethers": "^1.7.6",
+    "@reown/appkit-adapter-ethers5": "^1.7.6",
     "@sentry/nextjs": "^7.9.0",
     "@snapshot-labs/snapshot.js": "^0.4.40",
     "@vanilla-extract/next-plugin": "^2.1.1",
