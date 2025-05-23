@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useWeb3Modal, useWeb3ModalAccount } from '@web3modal/ethers5/react'
 import { Button } from '@pancakeswap/uikit'
 import useAuth from 'hooks/useAuth'
+// @ts-ignore
+// eslint-disable-next-line import/extensions
 import { useActiveHandle } from 'hooks/useEagerConnect.bmp.ts'
 import { ConnectorNames } from 'config/wallet'
 
