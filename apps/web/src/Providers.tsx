@@ -9,7 +9,7 @@ import { WagmiProvider } from '@pancakeswap/wagmi'
 import { client } from 'utils/wagmi'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
-import { ChainId } from '@pancakeswap/sdk'
+import { polygon } from 'wagmi/chains'
 
 const projectId = '9ba1c138ff7ad815f7026b920b652f0b';
 
@@ -22,12 +22,12 @@ const metadata = {
 
 const ethersConfig = defaultConfig({
   metadata,
-  defaultChainId: ChainId.BSC,
+  defaultChainId: polygon,
 });
 
 createWeb3Modal({
   ethersConfig,
-  chains: ChainId.BSC,
+  chains: [polygon],
   projectId,
   enableAnalytics: true,
   allowUnsupportedChain: true,
