@@ -36,8 +36,8 @@ createWeb3Modal({
   chains: [polygonChain],
   projectId,
   enableAnalytics: true,
-  allowUnsupportedChain: true,
-  enableOnramp: true,
+  allowUnsupportedChain: false,
+  enableOnramp: false,
 });
 
 const StyledUIKitProvider: React.FC<React.PropsWithChildren> = ({ children, ...props }) => {
