@@ -9,8 +9,14 @@ import { WagmiProvider } from '@pancakeswap/wagmi'
 import { client } from 'utils/wagmi'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
-import { polygon } from 'wagmi/chains'
-import { ChainId } from '@pancakeswap/sdk'
+
+const polygonChain = {
+  chainId: 137,
+  name: 'Polygon',
+  currency: 'MATIC',
+  explorerUrl: 'https://polygonscan.com',
+  rpcUrl: 'https://polygon-rpc.com'
+};
 
 const projectId = '9ba1c138ff7ad815f7026b920b652f0b';
 
@@ -23,13 +29,11 @@ const metadata = {
 
 const ethersConfig = defaultConfig({
   metadata,
-  defaultChainId: ChainId.BSC,
-  
 });
 
 createWeb3Modal({
   ethersConfig,
-  chains: [polygon],
+  chains: [polygonChain],
   projectId,
   enableAnalytics: true,
   allowUnsupportedChain: true,
