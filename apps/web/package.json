@@ -61,7 +61,7 @@
     "@sentry/nextjs": "^7.9.0",
     "@snapshot-labs/snapshot.js": "^0.4.40",
     "@vanilla-extract/next-plugin": "^2.1.1",
-    "@web3modal/wagmi": "^4.2.1",
+    "@web3modal/ethers5": "^4.2.1",
     "ajv": "^6.12.3",
     "bignumber.js": "^9.0.0",
     "canvas-confetti": "^1.5.1",

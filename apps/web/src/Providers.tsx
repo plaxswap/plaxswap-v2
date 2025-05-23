@@ -8,7 +8,7 @@ import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'ne
 import { WagmiProvider } from '@pancakeswap/wagmi'
 import { client } from 'utils/wagmi'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
 
 const polygonChain = {
   chainId: 137,
@@ -27,12 +27,12 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 };
 
-const wagmiConfig = defaultWagmiConfig({
+const ethersConfig = defaultConfig({
   metadata,
 });
 
 createWeb3Modal({
-  wagmiConfig,
+  ethersConfig,
   chains: [polygonChain],
   projectId,
   enableAnalytics: true,
