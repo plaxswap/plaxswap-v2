@@ -4,10 +4,9 @@ import useAuth from 'hooks/useAuth'
 // @ts-ignore
 // eslint-disable-next-line import/extensions
 import { useActiveHandle } from 'hooks/useEagerConnect.bmp.ts'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useState, useEffect } from 'react'
 import { useWeb3Modal, useWeb3ModalAccount } from '@web3modal/ethers5/react'
 import { ConnectorNames } from 'config/wallet'
-import { useState, useEffect } from 'react'
 
 const ConnectWalletButton = ({ children, ...props }: PropsWithChildren<ButtonProps>) => {
   const handleActive = useActiveHandle()
