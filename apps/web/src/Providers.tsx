@@ -27,7 +27,7 @@ const ethersConfig = defaultConfig({
 
 createWeb3Modal({
   ethersConfig,
-  ChainId,
+  chains: ChainId.BSC,
   projectId,
   enableAnalytics: true,
   allowUnsupportedChain: true,
