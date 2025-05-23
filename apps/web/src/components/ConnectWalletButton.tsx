@@ -40,6 +40,7 @@ const ConnectWalletButton = ({ children, ...props }: PropsWithChildren<ButtonPro
       <Button onClick={handleClick} variant="primary">
         {children || ('Connect Wallet')}
       </Button>
+      
     </>
   )
 }
