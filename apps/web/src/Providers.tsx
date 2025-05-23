@@ -8,6 +8,31 @@ import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'ne
 import { WagmiProvider } from '@pancakeswap/wagmi'
 import { client } from 'utils/wagmi'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
+import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
+import { ChainId } from '@pancakeswap/sdk'
+
+const projectId = '9ba1c138ff7ad815f7026b920b652f0b';
+
+const metadata = {
+  name: 'plaxswap',
+  description: 'PlaxSwap DEX',
+  url: 'https://plaxswap.com',
+  icons: ['https://avatars.githubusercontent.com/u/179229932']
+};
+
+const ethersConfig = defaultConfig({
+  metadata,
+  defaultChainId: ChainId.BSC,
+});
+
+createWeb3Modal({
+  ethersConfig,
+  ChainId,
+  projectId,
+  enableAnalytics: true,
+  allowUnsupportedChain: true,
+  enableOnramp: true,
+});
 
 const StyledUIKitProvider: React.FC<React.PropsWithChildren> = ({ children, ...props }) => {
   const { resolvedTheme } = useNextTheme()
