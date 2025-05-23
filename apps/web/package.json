@@ -58,6 +58,8 @@
     "@pancakeswap/utils": "*",
     "@pancakeswap/wagmi": "*",
     "@reduxjs/toolkit": "^1.9.1",
+    "@reown/appkit": "1.7.5",
+    "@reown/appkit-adapter-ethers": "1.7.5",
     "@sentry/nextjs": "^7.9.0",
     "@snapshot-labs/snapshot.js": "^0.4.40",
     "@vanilla-extract/next-plugin": "^2.1.1",
@@ -143,5 +145,9 @@
     "typechain": "^6.1.0",
     "vite-tsconfig-paths": "^4.0.3",
     "vitest": "^0.27.2"
+  },
+  "resolutions": {
+    "ethers": "^6.13.4",
+    "typescript": "^5"
   }
 }
