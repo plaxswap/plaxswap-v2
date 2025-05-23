@@ -10,7 +10,6 @@ interface SimpleMdeProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement
   onTextChange: (value: string) => void
 }
 
-// @ts-ignore
 const Wrapper = styled.div`
   .EasyMDEContainer .CodeMirror {
     background: ${({ theme }) => theme.colors.input};

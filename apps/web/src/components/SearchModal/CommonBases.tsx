@@ -9,13 +9,12 @@ import { AutoRow } from '../Layout/Row'
 import { CurrencyLogo } from '../Logo'
 import { CommonBasesType } from './types'
 
-// @ts-ignore
 const ButtonWrapper = styled.div`
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
 `
-// @ts-ignore
+
 const BaseWrapper = styled.div<{ disable?: boolean }>`
   border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
   border-radius: 10px;
@@ -29,7 +28,7 @@ const BaseWrapper = styled.div<{ disable?: boolean }>`
   background-color: ${({ theme, disable }) => disable && theme.colors.dropdown};
   opacity: ${({ disable }) => disable && '0.4'};
 `
-// @ts-ignore
+
 const RowWrapper = styled.div`
   white-space: nowrap;
   overflow-x: auto;

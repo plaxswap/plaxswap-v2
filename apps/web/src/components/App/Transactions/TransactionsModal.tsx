@@ -17,7 +17,6 @@ function renderTransactions(transactions: TransactionDetails[], chainId: number)
   return (
     <Flex flexDirection="column">
       {transactions.map((tx) => {
-        // @ts-ignore
         return <Transaction key={tx.hash + tx.addedTime} tx={tx} chainId={chainId} />
       })}
     </Flex>

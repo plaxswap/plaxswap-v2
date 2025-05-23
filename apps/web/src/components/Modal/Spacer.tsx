@@ -28,7 +28,6 @@ interface StyledSpacerProps {
   size: string
 }
 
-// @ts-ignore
 const StyledSpacer = styled.div<StyledSpacerProps>`
   height: ${(props) => props.size};
   width: ${(props) => props.size};

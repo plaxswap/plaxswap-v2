@@ -3,7 +3,7 @@ import { CheckmarkIcon, CloseIcon, LinkExternal } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { TransactionDetails } from 'state/transactions/reducer'
 import CircleLoader from '../../Loader/CircleLoader'
-// @ts-ignore
+
 const TransactionState = styled.div<{ pending: boolean; success?: boolean }>`
   display: flex;
   justify-content: space-between;
@@ -15,7 +15,7 @@ const TransactionState = styled.div<{ pending: boolean; success?: boolean }>`
   font-size: 0.825rem;
   color: ${({ theme }) => theme.colors.primary};
 `
-// @ts-ignore
+
 const IconWrapper = styled.div<{ pending: boolean; success?: boolean }>`
   color: ${({ pending, success, theme }) =>
     pending ? theme.colors.primary : success ? theme.colors.success : theme.colors.failure};

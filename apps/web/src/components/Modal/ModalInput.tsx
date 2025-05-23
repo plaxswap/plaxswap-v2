@@ -16,7 +16,6 @@ interface ModalInputProps {
   decimals?: number
 }
 
-// @ts-ignore
 const StyledTokenInput = styled.div<InputProps>`
   display: flex;
   flex-direction: column;

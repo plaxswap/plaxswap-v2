@@ -10,7 +10,6 @@ interface ProfileUserMenuItemProps {
   disabled: boolean
 }
 
-// @ts-ignore
 const Dot = styled.div`
   background-color: ${({ theme }) => theme.colors.failure};
   border-radius: 50%;

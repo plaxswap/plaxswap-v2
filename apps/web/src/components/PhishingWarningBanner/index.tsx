@@ -23,7 +23,7 @@ const InnerContainer = styled(Flex)`
   justify-content: center;
   align-items: center;
 `
-// @ts-ignore
+
 const SpeechBubble = styled.div`
   background: rgba(39, 38, 44, 0.4);
   border-radius: 16px;

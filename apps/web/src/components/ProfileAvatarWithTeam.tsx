@@ -6,7 +6,6 @@ export interface ProfileAvatarProps {
   profile: Profile
 }
 
-// @ts-ignore
 const TeamAvatar = styled.img`
   border: 1px solid ${({ theme }) => theme.card.background};
   border-radius: 50%;
@@ -23,7 +22,7 @@ const TeamAvatar = styled.img`
     border-width: 2px;
   }
 `
-// @ts-ignore
+
 const AvatarWrapper = styled.div<{ bg: string }>`
   background: url('${({ bg }) => bg}');
   background-repeat: no-repeat;

@@ -20,13 +20,11 @@ const TxnIcon = styled(Flex)`
   width: 24px;
 `
 
-// @ts-ignore
 const Summary = styled.div`
   flex: 1;
   padding: 0 8px;
 `
 
-// @ts-ignore
 const TxnLink = styled.div`
   cursor: pointer;
   align-items: center;

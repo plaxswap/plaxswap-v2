@@ -155,7 +155,6 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
   )
 })
 
-// @ts-ignore
 const ListContainer = styled.div`
   padding: 1rem 0;
   height: 100%;

@@ -14,7 +14,8 @@ import {
   Address,
   ExtractAbiFunction,
   ExtractAbiFunctionNames,
-  Narrow
+  Narrow,
+  ResolvedConfig,
 } from 'abitype'
 import { ethers } from 'ethers'
 
@@ -527,25 +528,25 @@ export type GetOverridesForAbiStateMutability<TAbiStateMutability extends AbiSta
 }[TAbiStateMutability]
 
 // Update `ethers.Overrides` to use abitype config
-// Update `ethers.Overrides` to use primitive types (fallback if abitype config is not available)
 export interface Overrides extends ethers.Overrides {
-  gasLimit?: bigint
-  gasPrice?: bigint
-  maxFeePerGas?: bigint
-  maxPriorityFeePerGas?: bigint
-  nonce?: number
+  gasLimit?: ResolvedConfig['BigIntType']
+  gasPrice?: ResolvedConfig['BigIntType']
+  maxFeePerGas?: ResolvedConfig['BigIntType']
+  maxPriorityFeePerGas?: ResolvedConfig['BigIntType']
+  nonce?: ResolvedConfig['IntType']
 }
 
-// Update `ethers.PayableOverrides` to use primitive types
+// Update `ethers.PayableOverrides` to use abitype config
 export interface PayableOverrides extends Overrides {
-  value?: number | bigint
+  value?: ResolvedConfig['IntType'] | ResolvedConfig['BigIntType']
 }
 
-// Update `ethers.CallOverrides` to use primitive types
+// Update `ethers.CallOverrides` to use abitype config
 export interface CallOverrides extends PayableOverrides {
   blockTag?: ethers.CallOverrides['blockTag']
   from?: Address
 }
+
 // Add type inference to `ethers.Event`
 export type Event<TAbiEvent extends AbiEvent> = Omit<ethers.Event, 'args' | 'event' | 'eventSignature'> & {
   args: AbiParametersToPrimitiveTypes<TAbiEvent['inputs']>

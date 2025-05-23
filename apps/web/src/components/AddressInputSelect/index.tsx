@@ -15,7 +15,7 @@ interface AddressInputSelectProps extends BoxProps {
   onValidAddress?: (value: string) => Promise<boolean>
   onAddressClick: (value: string) => void
 }
-// @ts-ignore
+
 const SubMenu = styled.div<{ isOpen: boolean }>`
   align-items: center;
   background: ${({ theme }) => theme.colors.input};

@@ -8,7 +8,6 @@ import Dots from 'components/Loader/Dots'
 import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
 
-// @ts-ignore
 const AnniversaryImage = styled.img`
   border-radius: 50%;
   height: 128px;

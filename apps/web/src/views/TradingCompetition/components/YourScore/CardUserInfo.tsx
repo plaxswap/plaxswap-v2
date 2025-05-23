@@ -61,32 +61,31 @@ const CardUserInfo: React.FC<React.PropsWithChildren<CardUserInfoProps>> = ({
   const shouldShowUserRanks = account && hasRegistered
 
   const getMedal = (currentRank: string | number) => {
-    const numericcurrentRank = Number(currentRank)
     if (currentRank === 1) {
       return {
         current: <MedalGoldIcon />,
         next: null,
       }
     }
-    if (numericcurrentRank <= 10) {
+    if (currentRank <= 10) {
       return {
         current: <MedalSilverIcon />,
         next: <MedalGoldIcon />,
       }
     }
-    if (numericcurrentRank <= 100) {
+    if (currentRank <= 100) {
       return {
         current: <MedalBronzeIcon />,
         next: <MedalSilverIcon />,
       }
     }
-    if (numericcurrentRank <= 500) {
+    if (currentRank <= 500) {
       return {
         current: <MedalPurpleIcon />,
         next: <MedalBronzeIcon />,
       }
     }
-    if (numericcurrentRank > 500) {
+    if (currentRank > 500) {
       return {
         current: <MedalTealIcon />,
         next: <MedalPurpleIcon />,
@@ -99,32 +98,31 @@ const CardUserInfo: React.FC<React.PropsWithChildren<CardUserInfoProps>> = ({
   }
 
   const getNextTier = (currentRank: string | number) => {
-    const numericcurrentRank = Number(currentRank)
-    if (numericcurrentRank === 1) {
+    if (currentRank === 1) {
       return {
         color: null,
         rank: null,
       }
     }
-    if (numericcurrentRank <= 10) {
+    if (currentRank <= 10) {
       return {
         color: 'GOLD',
         rank: 1,
       }
     }
-    if (numericcurrentRank <= 100) {
+    if (currentRank <= 100) {
       return {
         color: 'SILVER',
         rank: 10,
       }
     }
-    if (numericcurrentRank <= 500) {
+    if (currentRank <= 500) {
       return {
         color: 'BRONZE',
         rank: 100,
       }
     }
-    if (numericcurrentRank > 500) {
+    if (currentRank > 500) {
       return {
         color: 'PURPLE',
         rank: 500,

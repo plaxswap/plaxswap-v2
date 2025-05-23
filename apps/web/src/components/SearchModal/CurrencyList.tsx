@@ -28,7 +28,7 @@ const StyledBalanceText = styled(Text)`
   max-width: 5rem;
   text-overflow: ellipsis;
 `
-// @ts-ignore
+
 const FixedContentRow = styled.div`
   padding: 4px 20px;
   height: 56px;

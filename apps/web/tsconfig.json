@@ -6,12 +6,6 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "downlevelIteration": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "incremental": true,
     "target": "es5"
   },
   "exclude": ["node_modules"],

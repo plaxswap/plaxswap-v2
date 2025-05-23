@@ -35,7 +35,6 @@ const ModalHeader = styled(UIKitModalHeader)`
   background: ${({ theme }) => theme.colors.gradientBubblegum};
 `
 
-// @ts-ignore
 const Tabs = styled.div`
   background-color: ${({ theme }) => theme.colors.dropdown};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};

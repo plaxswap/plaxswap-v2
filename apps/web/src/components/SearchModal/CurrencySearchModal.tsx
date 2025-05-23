@@ -26,7 +26,6 @@ import ImportToken from './ImportToken'
 import Manage from './Manage'
 import { CurrencyModalView } from './types'
 
-// @ts-ignore
 const Footer = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.backgroundAlt};

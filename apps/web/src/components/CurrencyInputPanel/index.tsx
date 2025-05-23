@@ -17,7 +17,6 @@ import { CurrencyLogo, DoubleCurrencyLogo } from '../Logo'
 
 import AddToWalletButton from '../AddToWallet/AddToWalletButton'
 
-// @ts-ignore
 const InputRow = styled.div<{ selected: boolean }>`
   display: flex;
   flex-flow: row nowrap;
@@ -37,7 +36,6 @@ const CurrencySelectButton = styled(Button).attrs({ variant: 'text', scale: 'sm'
       height: auto;
     `};
 `
-// @ts-ignore
 const LabelRow = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -47,7 +45,6 @@ const LabelRow = styled.div`
   line-height: 1rem;
   padding: 0.75rem 1rem 0 1rem;
 `
-// @ts-ignore
 const InputPanel = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -55,7 +52,6 @@ const InputPanel = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundAlt};
   z-index: 1;
 `
-// @ts-ignore
 const Container = styled.div<{ zapStyle?: ZapStyle; error?: boolean }>`
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.input};
@@ -66,7 +62,7 @@ const Container = styled.div<{ zapStyle?: ZapStyle; error?: boolean }>`
       border-radius: 0px 16px 16px 16px;
     `};
 `
-// @ts-ignore
+
 const Overlay = styled.div`
   position: absolute;
   inset: 0;

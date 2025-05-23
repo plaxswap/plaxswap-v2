@@ -4,7 +4,6 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-// @ts-ignore
 const StyledNav = styled.nav`
   margin-bottom: 40px;
 `
@@ -30,12 +29,12 @@ const Nav = () => {
     <StyledNav>
       <ButtonMenu activeIndex={getActiveIndex(pathname)} scale="sm" variant="subtle">
         <Link href="/swap" passHref>
-          <ButtonMenuItem id="swap-nav-link">
+          <ButtonMenuItem id="swap-nav-link" as="a">
             {t('Swap')}
           </ButtonMenuItem>
         </Link>
         <Link href="/pool" passHref>
-          <ButtonMenuItem id="pool-nav-link">
+          <ButtonMenuItem id="pool-nav-link" as="a">
             {t('Liquidity')}
           </ButtonMenuItem>
         </Link>

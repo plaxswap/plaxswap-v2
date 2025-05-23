@@ -1,7 +1,6 @@
 import { Checkbox } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 
-// @ts-ignore
 const ZapCheckBoxWrapper = styled.label`
   display: grid;
   place-content: center;
