@@ -15,20 +15,19 @@ const ConnectWalletButton = ({ children, ...props }: PropsWithChildren<ButtonPro
   const { isConnected } = useWeb3ModalAccount()
 
 
-  
+  const handleReownLogin = async () => {
+    if (isConnected) {
+      login(ConnectorNames.Injected)
+    }
+  }
 
   const handleClick = async () => {
     if (typeof __NEZHA_BRIDGE__ !== 'undefined') {
       handleActive()
     } else {
       try {
-        await connectReown().then(() => {
-  setTimeout(() => {
-    if (isConnected) {
-      login(ConnectorNames.Injected)
-    }
-  }, 300)
-})
+        await connectReown()
+        await handleReownLogin()
       } finally {
         // do nothing
       }
