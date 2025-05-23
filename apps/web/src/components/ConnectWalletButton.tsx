@@ -1,46 +1,42 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, ButtonProps } from '@pancakeswap/uikit'
+import { useMemo } from 'react'
+import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
-// @ts-ignore
-// eslint-disable-next-line import/extensions
-import { useActiveHandle } from 'hooks/useEagerConnect.bmp.ts'
-import { PropsWithChildren } from 'react'
-import { useWeb3Modal, useWeb3ModalAccount } from '@web3modal/ethers5/react'
-import { ConnectorNames } from 'config/wallet'
+import { useWebModal } from '@webmodal/ethers5'
+import { Web3Provider } from '@ethersproject/providers'
+import Trans from './Trans'
 
-const ConnectWalletButton = ({ children, ...props }: PropsWithChildren<ButtonProps>) => {
-  const handleActive = useActiveHandle()
+const ConnectWalletButton = ({ children, ...props }: ButtonProps) => {
   const { login } = useAuth()
-  const { open: connectReown } = useWeb3Modal()
-  const { isConnected } = useWeb3ModalAccount()
+  const {
+    t,
+    currentLanguage: { code },
+  } = useTranslation()
+  const { chainId } = useActiveChainId()
 
+  const { openWebModal, connected, account } = useWebModal({
+    chainId,
+    onConnect: async (provider) => {
+  const ethersProvider = new Web3Provider(provider)
+  await login(ethersProvider)
+},
+    language: code,
+  })
 
-  const handleReownLogin = async () => {
-    if (isConnected) {
-      login(ConnectorNames.Injected)
-    }
-  }
-
-  const handleClick = async () => {
+  const handleClick = () => {
     if (typeof __NEZHA_BRIDGE__ !== 'undefined') {
-      handleActive()
+      // Bisa dipertahankan jika tetap ingin handle khusus NEZHA
     } else {
-      try {
-        await connectReown()
-        await handleReownLogin()
-      } finally {
-        // do nothing
-      }
+      openWebModal()
     }
   }
-
 
   return (
     <>
-      <Button onClick={handleClick} variant="primary">
-        {children || ('Connect Wallet')}
+      <Button onClick={handleClick} {...props}>
+        {connected ? account?.short || account?.address : children || <Trans>Connect Wallet</Trans>}
       </Button>
-      
     </>
   )
 }

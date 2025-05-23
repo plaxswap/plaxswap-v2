@@ -1,63 +1,44 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { CHAIN_QUERY_NAME } from 'config/chains'
-import { WalletConnectorNotFoundError, WalletSwitchChainError } from '@pancakeswap/ui-wallets'
-import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'
-import { ConnectorNames } from 'config/wallet'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'state'
-import {
-  ConnectorNotFoundError,
-  SwitchChainError,
-  SwitchChainNotSupportedError,
-  useConnect,
-  useDisconnect,
-  useNetwork,
-} from 'wagmi'
 import { clearUserStates } from '../utils/clearUserStates'
 import { useActiveChainId } from './useActiveChainId'
 import { useSessionChainId } from './useSessionChainId'
+import { Web3Provider } from '@ethersproject/providers'
 
 const useAuth = () => {
   const dispatch = useAppDispatch()
-  const { connectAsync, connectors } = useConnect()
-  const { chain } = useNetwork()
-  const { disconnectAsync } = useDisconnect()
   const { chainId } = useActiveChainId()
   const [, setSessionChainId] = useSessionChainId()
-  const { t } = useTranslation()
 
   const login = useCallback(
-    async (connectorID: ConnectorNames) => {
-      const findConnector = connectors.find((c) => c.id === connectorID)
+    async (provider: Web3Provider) => {
       try {
-        const connected = await connectAsync({ connector: findConnector, chainId })
-        if (!connected.chain.unsupported && connected.chain.id !== chainId) {
-          replaceBrowserHistory('chain', CHAIN_QUERY_NAME[connected.chain.id])
-          setSessionChainId(connected.chain.id)
+        const network = await provider.getNetwork()
+        if (network.chainId !== chainId) {
+          // Optional: prompt user to switch chain manually in their wallet
+          console.warn(`Expected chain ${chainId} but got ${network.chainId}`)
         }
-        return connected
+        setSessionChainId(network.chainId)
+        // You can save user info here or initialize states as needed
+        return provider
       } catch (error) {
-        if (error instanceof ConnectorNotFoundError) {
-          throw new WalletConnectorNotFoundError()
-        }
-        if (error instanceof SwitchChainNotSupportedError || error instanceof SwitchChainError) {
-          throw new WalletSwitchChainError(t('Unable to switch network. Please try it on your wallet'))
-        }
+        console.error('Login error:', error)
+        throw error
       }
-      return undefined
     },
-    [connectors, connectAsync, chainId, setSessionChainId, t],
+    [chainId, setSessionChainId],
   )
 
   const logout = useCallback(async () => {
     try {
-      await disconnectAsync()
+      // If using ethers5 directly, you can't disconnect programmatically
+      // Just clear state instead
     } catch (error) {
       console.error(error)
     } finally {
-      clearUserStates(dispatch, { chainId: chain?.id })
+      clearUserStates(dispatch, { chainId })
     }
-  }, [disconnectAsync, dispatch, chain?.id])
+  }, [dispatch, chainId])
 
   return { login, logout }
 }
